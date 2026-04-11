@@ -1,0 +1,30 @@
+# 컨테이너 자료형 - [1] 순서있는 자료형 List
+# 다양한 내장함수 활용
+# 다양한 데이터
+datas1 = []
+datas2 = ["Hello", 123, 0.98, False]
+datas3 = [[100,200,300], [4,9,9,2,2,4], 'good']
+
+# 내장함수: type() -> 데이터 타입 확인
+print(f'type(datas1 : {type(datas1)}, {datas1})')
+print(f'type(datas2 : {type(datas2)}, {datas2})')
+print(f'type(datas3 : {type(datas3)}, {datas3})', '\n')
+
+# 내장함수 :len() -> 데이터/요소 개수 반환
+print(f'len(datas1 : {len(datas1)}, {datas1})')
+print(f'len(datas2 : {len(datas2)}, {datas2})')
+print(f'len(datas3 : {len(datas3)}, {datas3})', '\n')
+
+# 내장함수 :max() -> 데이터/요소 최고값 반환
+# 내장함수 :min() -> 데이터/요소 최소값 반환
+# str 데이터는 문자 1개 개애의 코드값을 비교함
+datas2 = [5,1,62,2626,345,555]
+datas3 = ['Abc', 'APPle', 'ananconda', 'zoo']
+print(f'max(datas2) : {max(datas2)}, min(datas2) : {min(datas2)})')
+print(f'max(datas3) : {max(datas3 )}, min(datas2) : {min(datas3)})', '\n')
+
+# 내장함수 :sum() -> 데이터/요소 합계 반환
+# sum 함수는 수치 데이터만 가능
+print(f'sum(datas1) : {sum(datas1)})')
+print(f'sum(datas2) : {sum(datas2)})', '\n')
+# print(f'sum(datas3) : {sum(datas3)})', '\n')
