@@ -12,20 +12,24 @@ print('# 1번')
 print('#----------------------------------')
 # (1)  words의 모든 요소를 for반복문으로 출력
 print('[1]---')
-
-
+for i in words:
+    print(i)
 
 #(2)  words에서 홀수번째 요소만 for반복문으로 출력
 print('\n[2]---')
-
-
+for i in words:
+    print(i[::2])
 
 #(3)  words에서 길이가 3이상인 요소만 for반복문으로 출력
 print('\n[3]---')
+for i in words:
+    if len(words) in words >= 3:
+        print(i)
 
 # (4)  words를 오름차순 정렬하여 모든 요소 출력
 print('\n[4]---')
-
+words.sort()
+print(i)
 
 # ## ----------------------------------------------------------------
 # 2.  아래 데이터에 대한 구현 코드 작성하세요.
