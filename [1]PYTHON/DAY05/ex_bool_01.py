@@ -21,5 +21,3 @@ print(int(True),int(False))
 data1,data2 = "", " "
 print(bool(data1),bool(data2))
 print(str(True),str(False))
-
-data1,data2 = "집에 가고 싶다", "언제 끝나노"
