@@ -196,7 +196,7 @@ print({i: j for i, j in zip(keys, values)})
 print({i:j for i, j in zip("abcde", range(97, 102))})
 
 # ord() -> 문자 -> 숫자
-# char() -> 숫자 -> 문자
+# chr() -> 숫자 -> 문자
 # print({i:ord(i) for i in "abcde"})
 # ---
 
