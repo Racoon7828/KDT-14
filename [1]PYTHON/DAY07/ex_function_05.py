@@ -23,11 +23,11 @@ print(f"getGrade()                               : {getGrade()}")
 print(f"getGrade(kor=90, dance=100)              : {getGrade(kor=90, dance=65)}")
 print(f"getGrade(sci=100,art=99,com=89,life=100) : {getGrade(sci=100,art=99,com=89,life=100)}")
 
-# def getGrade(**jumsu):
-#     grade = [i for i in jumsu.values()]
-#     avg = grade/len(jumsu) if len(jumsu) else 0
-#     # return avg
-#     return "A" if avg >= 90 else "B" if avg >= 80 else "C" if avg >= 70 else "D" if avg >= 60 else "F"  
-# print(f"getGrade()                               : {getGrade()}")
-# print(f"getGrade(kor=90, dance=100)              : {getGrade(kor=90, dance=65)}")
-# print(f"getGrade(sci=100,art=99,com=89,life=100) : {getGrade(sci=100,art=99,com=89,life=100)}")
+def getGrade(**jumsu):
+    grade = [i for i in jumsu.values()]
+    avg = sum(grade)/len(jumsu) if len(jumsu) else 0
+    # return avg
+    return "A" if avg >= 90 else "B" if avg >= 80 else "C" if avg >= 70 else "D" if avg >= 60 else "F"  
+print(f"getGrade()                               : {getGrade()}")
+print(f"getGrade(kor=90, dance=100)              : {getGrade(kor=90, dance=65)}")
+print(f"getGrade(sci=100,art=99,com=89,life=100) : {getGrade(sci=100,art=99,com=89,life=100)}")
