@@ -8,7 +8,6 @@
 ## -------------------------------------------------
 import os, datetime
 
-
 ## -------------------------------------------------
 ## 전역변수
 ## -------------------------------------------------
@@ -134,10 +133,10 @@ def delete_memo():
         elif 1 <= choice <= len(mitems):
             selected_file = mitems[choice - 1]
             os.remove(f'{MEMO_DIR}/{selected_file}')
-            # 파일 이름 재정렬 (젬미니 사용)
+            # 파일 이름 재정렬 (젬미니 물어봄)
             remaining_files = [f for f in os.listdir(MEMO_DIR) if '.memo_' in f and f.endswith('.txt')]
             remaining_files.sort()
-            for i, filename in enumerate(remaining_files, 1):
+            for i, filename in enumerate(remaining_files, 1): # enumerate =  인덱스와 원소로 이루어진 튜플(tuple)을 만들어 준다
                 parts = filename.split('.', 1) 
                 if len(parts) < 2: continue
                 content_part = parts[1]
