@@ -18,5 +18,3 @@ def print_info(obj, obj_name):
 
 
 
-
-

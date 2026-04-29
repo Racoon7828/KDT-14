@@ -58,7 +58,7 @@ product3 = product3.sort_index()
 print(product3,'\n')
 
 # 문제 11) products3 DataFrame의 인덱스를 내림차순으로 정렬하세요. 
-product3 = product3.sort_index()
+product3 = product3.sort_index(ascending=False)
 print(product3,'\n')
 
 # 문제 12) products3 DataFrame의 인덱스를 초기화하여 0, 1, 2, 3, 4 형태의정수 인덱스로 변경하세요. 
