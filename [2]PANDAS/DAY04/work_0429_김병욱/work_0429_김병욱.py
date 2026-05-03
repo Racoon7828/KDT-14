@@ -7,25 +7,26 @@ import utils
 
 
 # read_csv() 함수로 df 생성
-df = pd.read_csv(r'C:\Users\Win11Pro\Desktop\KDT-14\[2]PANDAS\DATA\auto_mpg.csv', header=None )
+df = pd.read_csv(r'C:\Users\Win11Pro\Desktop\KDT-14\[2]PANDAS\DATA\auto_mpg.csv')
 
 # df.columns = ['mpg','cylinders','displacement','horsepower','weight','acceleration','model year','origin','car name']
 
 # 현재 csv 파일에서 1번째 줄에 column이 적혀있으므로 1번째 줄 컬럼 등록 후 삭제
-df.columns = df.iloc[0]
-df.columns.name = None
+# df.columns = df.iloc[0]
+# df.columns.name = None
 # 컬럼 삭제
-df.drop(0, inplace=True)
+# df.drop(0, inplace=True)
 
 # Pandas가 데이터를 처음 읽어올 때나 행을 조작할 때, 자동으로 타입을 재해석하지 않는다.
+# df = df.convert_dtypes() # => str
+
 # df.apply 데이터프레임의 행(row)이나 열(column) 단위로 함수를 반복 적용할 때 사용
 # pd.to_numeric 문자열(object) 상태인 데이터를 숫자형(int 또는 float)으로 변환
-# df = df.convert_dtypes()
-df = df.apply(pd.to_numeric, errors='ignore')
-df = df.sort_index(ignore_index=True)
+# df = df.apply(pd.to_numeric, errors='ignore')
+# df = df.sort_index(ignore_index=True)
 
-print(df)
-# utils.data_info(df)
+print(df.dtypes)
+utils.data_info(df)
 
 print(f"\n{df.describe(include='object')}\n")
 print(f"열 === \n{df.columns}\n")
