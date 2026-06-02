@@ -1,0 +1,94 @@
+<!-- 태그 
+태그는 여는 태그 닫는 태그 쌍
+xml에서는 아무 태그나 내가 만들고 싶은 대로 만드는데 특별한 태그를 몇개 정해놓고
+그것을 웹브라우저로 볼 수 있게 한 문서 형태 : html
+-->
+<html>
+<head>
+	<title>문서 제목</title>
+	<style>
+        body {
+            /* ⚠️ 가로 스크롤바 방지 및 배경색 */
+            overflow-x: hidden; 
+            background-color: #f5f5f5;
+        }
+        h1 { color: #ffffff; }
+        
+        p {
+            font-size: large; 
+            color: #ffBBCC;
+        }
+        
+        .main-content {
+            animation-duration: 3s;
+            animation-name: slidein;
+			animation-timing-function: ease-in-out;
+            animation-fill-mode: forwards;
+        }
+        
+        .home {
+            font-weight: bold;
+            display: inline-block;
+
+            animation-name: slidein, slideout;
+            animation-duration: 0s, 3s;
+			animation-delay: 0s, 6s;
+            animation-iteration-count: 1;
+            animation-timing-function: ease-in-out;
+            animation-fill-mode: forwards; 
+        }
+
+        .box {
+            border: 2px solid #ffBBCC;
+            border-radius: 12px;
+            padding: 24px 32px;
+            margin: 32px auto;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            font-size: large;
+            max-width: 800px;
+        }
+		
+		/* 입장 슬라이드 */
+        @keyframes slidein {
+            from {
+                margin-left: 100%;
+                width: 300%;
+            }
+            to {
+                margin-left: 0%;
+                width: 100%;
+            }
+        }
+
+		/* ~ 퇴장 */
+        @keyframes slideout {
+            from {
+                margin-left: 0%;
+                width: 100%;
+            }
+            to {
+                margin-left: 500%;
+                width: 300%;
+            }
+        }
+    </style>
+</head>
+<body style="background-color: black;" text-align: center;>
+	<div class="box">
+		<h1 >Hello World</h1>
+		<h2 style="color: #f0f0f0; text-align: center;">인성검사 질문<h2/>
+		<div class="main-content">
+			<p>달팽이는 암수 동체이지만 번식을 위해서 두 마리가 만나야한다.</p>
+			<p>나는 메뚜기의 종류를 100가지 이상 알고 있다.</p>
+			<p>나는 가끔 아무런 이유 없이 슬퍼진다</p>
+			<p>팀이 비난을 받는다면, 내가 비난을 받는 느낌이다</p>
+			<p>나는 규칙이나 규정을 어긴 적이 단 한 번도 없다.</p>
+			<p>상사가 부당한 지시를 한다면 어떻게 대처할 것인가요.</p>
+			<p>나는 단 한 번도 화를 낸 적이 없다.</p>
+			<p>규칙을 어서라도 효율적으로 일하는 것이 낫다.</p>
+			<p class="home">아 집에 가고 싶다.</p>
+		</div>
+	</div>
+</body>
+</html>

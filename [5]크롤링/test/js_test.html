@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <style>
+            /* CSS */
+            .hello
+            {
+                background-color:lightslategray;
+                cursor: pointer;
+                border-radius: 15px;
+                display: inline-block;
+                padding: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="hello" onclick="myFucntion()">클릭</div>
+
+        <button onclick="func()">나를 클릭!!!</button>
+        
+        <!-- Javascript -->
+        <script>
+            let person = {
+                name: 'John',
+                age: 30,
+                sayHello: function(){
+                    console.log('Hello')
+                }
+            }
+
+            // fucntion myFunction()
+            var myFucntion = function() {person.sayHello()}
+
+            var func = function()
+            {
+                var d = document.querySelector('.hello')
+                // d.onclick = function() {d.textContent = "하하하";}
+                d.addEventListener('mousedown', () => {
+                    d.textContent = "하하하";
+                });
+
+                d.addEventListener('mouseup', () => {
+                    d.textContent = "호호호";
+                });
+            }
+        </script>
+    </body>
+</html>
