@@ -54,6 +54,8 @@ desktop.ini
 *.npy
 *.out
 *.txt
+*.jsonl
+*.xml
 
 # Model files
 *.pkl
@@ -63,6 +65,7 @@ desktop.ini
 *.pth
 *.onnx
 *.h5
+*.toml
 
 # Images
 *.jpg
