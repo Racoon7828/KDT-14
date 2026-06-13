@@ -8,19 +8,25 @@ import koreanize_matplotlib
 #           datas - 이미지 데이터 리스트
 #           cmap - 그래프별 컬러맵
 
-def printPolts(nrow, ncol, titles, datas, cmap=None):
-    cmaps = [None] * (nrow*ncol) if cmap == None else cmap * (nrow*ncol) if len(cmap) == 1 else cmap
+def printPlots(nrow, ncol, titles, datas, cmap=None):
 
-    f_w, f_y = 6 * ncol, 6* nrow
-    _, axes = plt.subplots(nrow, ncol, sharey = True, figsize=(f_w,f_y))
+    # 그래프 마다 컬러맵 설정값 
+    cmaps = [None] * (nrow*ncol) if cmap==None else cmap * (nrow*ncol) if len(cmap)==1 else cmap
 
-    # 그래프 객체를 1차원으로 변환
-    if nrow != 1: axes = axes.flatten()
+    # 그래프 그리기
+    f_w, f_y = 3 * ncol , 3 * nrow 
+    _, axes = plt.subplots(nrow, ncol , sharey = True, figsize=(f_w, f_y))
 
+    # 그래프 객체를 1D차원으로 변환
+    axes = [axes] if (nrow * ncol) == 1 else axes.flatten() if nrow != 1 else axes
+
+    # 그래프 객체 채우기
     for ax, title, data, cmap in zip(axes, titles, datas, cmaps):
         ax.set_title(title)
         ax.imshow(data, cmap)
-        ax.axis('off')
+        ax.axis('off')   
+
+    plt.tight_layout()
     plt.show()
 
 def printPlotImage(nrow, ncol, titles, plots, images, cmap=None):
