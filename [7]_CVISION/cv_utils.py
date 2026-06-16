@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import matplotlib.cm as cm
 import koreanize_matplotlib
+import cv2
 
 # 매개변수 : nrow - 행 개수
 #           ncol - 컬럼 개수
@@ -47,4 +48,24 @@ def printPlotImage(nrow, ncol, titles, plots, images, cmap=None):
         if flag == 'p': ax.plot(data)
         else: ax.imshow(data, cmap=cur_cmap)
     plt.tight_layout()
+    plt.show()
+
+## ------------------------------------------------------
+## 함수이름 : printDistance
+## 함수기능 : 이미지의 거리값 출력 함수 
+## 매개변수 : imgNP    - 이미지 배열 데이터
+##           disNP   - 거리값 저장 배열 데이터
+##           title   - 그래프 제목
+## 함수결과 : 직접 출력으로 없음 None
+## ------------------------------------------------------
+def printDistance(images, dist, title, cmap_=None):
+    plt.figure(figsize=(5, 5))
+    plt.imshow(images, cmap=cmap_ if cmap_ else "gray", vmin=0, vmax=255)
+    for y in range(dist.shape[0]):
+        for x in range(dist.shape[1]):
+            plt.text(x, y, str(dist[y, x]), ha="center", va="center", fontsize=8)
+    plt.title(f"{title}")
+    plt.xticks(range(images.shape[1]))
+    plt.yticks(range(images.shape[0]))
+    plt.grid()
     plt.show()
